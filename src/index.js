@@ -28,7 +28,7 @@ languages.forEach(lang => {
 });
 
 router.get('/' ,function(req,res){
-    res.redirect('/cs');
+    res.redirect('/.netlify/functions/index/cs');
   });
 
 
