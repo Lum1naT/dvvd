@@ -39,7 +39,7 @@ app.use('/', router);
 
 
 // define your root for css and html files
-app.use(express.static(__dirname + 'src/'));
+app.use(express.static(__dirname));
 
 
 
