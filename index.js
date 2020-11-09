@@ -6,7 +6,7 @@ const router = express.Router();
 
 
 // add routes for all languages
-const languages = ['en', 'de', 'cs', 'es'];
+const languages = ['en', 'de', 'cs'];
 
 
 languages.forEach(lang => {
