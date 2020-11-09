@@ -1,7 +1,7 @@
 const express = require('express');
+const serverless = require('serverless-http');
 const app = express();
 const port = 5566;
-const path = require('path');
 const router = express.Router();
 
 
@@ -36,8 +36,13 @@ router.get('/' ,function(req,res){
 // use router
 app.use('/', router);
 
+
+module.exports = app;
+module.exports.handler = serverless(app);
+
+
 // define your root for css and html files
-app.use(express.static(path.join(__dirname, 'src')));
+app.use(express.static('src'));
 
 
 
@@ -47,3 +52,5 @@ app.listen(port, () => {
 
 
 })
+
+
