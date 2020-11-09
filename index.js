@@ -1,7 +1,6 @@
 const express = require('express');
-const serverless = require('serverless-http');
 const app = express();
-const port = 9000;
+const port = 5566;
 const router = express.Router();
 
 
@@ -12,12 +11,12 @@ const languages = ['en', 'de', 'cs'];
 languages.forEach(lang => {
     
     router.get('/' + lang ,function(req,res){
-        res.sendFile('./templates/' + lang + '/index.html', { root: __dirname });
+        res.sendFile('./src/templates/' + lang + '/index.html', { root: __dirname });
         //__dirname : It will resolve to your project folder.
       });
 
     router.get('/' + lang + '/about' ,function(req,res){
-        res.sendFile('./templates/' + lang + '/index.html', { root: __dirname });
+        res.sendFile('./src/templates/' + lang + '/index.html', { root: __dirname });
         //__dirname : It will resolve to your project folder.
       });
     
@@ -28,21 +27,19 @@ languages.forEach(lang => {
 });
 
 router.get('/' ,function(req,res){
-    res.redirect('/.netlify/functions/index/cs');
+    res.redirect('/cs');
   });
 
 
 
 // use router
-app.use('/.netlify/functions/index', router);
+app.use('/', router);
 
 
-module.exports = app;
-module.exports.handler = serverless(app);
 
 
 // define your root for css and html files
-app.use(express.static('src'));
+app.use(express.static(__dirname + 'src/'));
 
 
 
