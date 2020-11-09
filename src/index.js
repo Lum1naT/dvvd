@@ -34,7 +34,7 @@ router.get('/' ,function(req,res){
 
 
 // use router
-app.use('/', router);
+app.use('/.netlify/functions/index', router);
 
 
 module.exports = app;
