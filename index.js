@@ -9,7 +9,7 @@ let loader = new TwingLoaderFilesystem('./src/templates');
 let twing = new TwingEnvironment(loader);
 
 // add routes for all languages
-const languages = ['en', 'de', 'cs'];
+const languages = ['en', 'cs'];
 
 languages.forEach((lang) => {
   router.get('/' + lang, function (req, res) {

@@ -1,17 +1,24 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="#">Navbar</a>
+
+
+
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+  <a class="navbar-brand" href="/cs">DTech</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
+    <span id="menuToggle" class="fa fa-bars"></span>
   </button>
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <a class="nav-link" href="/cs">Home <span class="sr-only">(current)</span></a>
+     
+        <a class="nav-link active" href="/cs"></a>
+      </li>
+
+       <li class="nav-item">
+        <a class="nav-link" href="/cs">Projekty <small>a reference</small> <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Link</a>
-      </li>
+
+
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Dropdown
@@ -25,3 +32,26 @@
       </li>
   </div>
 </nav>
+
+
+   
+<script>
+$(document).ready( function (){
+
+
+  $("#menuToggle").click( function(){
+  if($(this).hasClass("fa-bars")){
+    $(this).addClass("fa-times")
+    $(this).removeClass("fa-bars")
+
+  } else {
+    $(this).addClass("fa-bars")
+    $(this).removeClass("fa-times")
+
+  }
+  });
+
+});
+
+</script>
+
