@@ -3,21 +3,42 @@ const app = express();
 require('dotenv').config();
 const port = process.env.PORT;
 const router = express.Router();
-const { TwingEnvironment, TwingLoaderFilesystem } = require('twing');
+const Twig = require('twig');
 
-let loader = new TwingLoaderFilesystem('./src/templates');
-let twing = new TwingEnvironment(loader);
+const MongoClient = require('mongodb').MongoClient;
+const uri = "mongodb+srv://lum1nat:root@devcluster.3sxtl.mongodb.net/dvvd?retryWrites=true&w=majority";
+const client = new MongoClient(uri, { useNewUrlParser: true });
+
+
+client.connect(err => {
+  const collection = client.db("dvvd").collection("language");
+  // perform actions on the collection object
+
+ client.close();
+
+});
 
 // add routes for all languages
-const languages = ['en', 'cs'];
+const languages = ['en', 'de', 'cs'];
 
-languages.forEach((lang) => {
-  router.get('/' + lang, function (req, res) {
-    twing.render(lang + '/index.html.twig', {}).then((output) => {
-      res.end(output);
-    });
-    //__dirname : It will resolve to your project folder.
-  });
+
+languages.forEach(lang => {
+    
+    router.get('/' + lang ,function(req,res){
+        res.render('./src/templates/' + lang + '/index.html.twig', {language: lang},{ root: __dirname });
+        //__dirname : It will resolve to your project folder.
+      });
+
+    router.get('/' + lang + '/about' ,function(req,res){
+        res.render('./src/templates/' + lang + '/index.html.twig', {language: lang},{ root: __dirname });
+        //__dirname : It will resolve to your project folder.
+      });
+    
+
+
+// 
+
+});
 
   router.get('/' + lang + '/about', function (req, res) {
     twing.render(lang + '/index.html.twig', {}).then((output) => {
