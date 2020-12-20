@@ -2,6 +2,19 @@
 @import '/node_modules/font-awesome/css/font-awesome.css';
 nav {
   background-color: #232323;
+  height: 4rem;
+}
+nav a {
+  color: #cccccc !important;
+}
+nav div {
+  background-color: #232323 !important;
+}
+nav div .circle {
+  background-color: red;
+  height: 30px;
+  width: 30px;
+  float: right;
 }
 
 /*# sourceMappingURL=style.css.map */
