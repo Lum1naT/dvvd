@@ -1,11 +1,35 @@
 @import '/node_modules/bootstrap/dist/css/bootstrap.css';
 @import '/node_modules/font-awesome/css/font-awesome.css';
 @font-face {
-  font-family: "Source Sans Pro";
-  src: url(../../static/fonts/SourceSansPro/SourceSansPro-BoldItalic.ttf) "truetype";
+  font-family: "ssp-200";
+  src: url(../../static/fonts/SourceSansPro/SourceSansPro-ExtraLight.ttf) format("truetype");
+}
+@font-face {
+  font-family: "ssp-200-i";
+  src: url(../../static/fonts/SourceSansPro/SourceSansPro-ExtraLightItalic.ttf) format("truetype");
+}
+@font-face {
+  font-family: "ssp-300-i";
+  src: url(../../static/fonts/SourceSansPro/SourceSansPro-Light.ttf) format("truetype");
+}
+@font-face {
+  font-family: "ssp-300-i";
+  src: url(../../static/fonts/SourceSansPro/SourceSansPro-LightItalic.ttf) format("truetype");
+}
+@font-face {
+  font-family: "ssp-400";
+  src: url(../../static/fonts/SourceSansPro/SourceSansPro-Regular.ttf) format("truetype");
+}
+@font-face {
+  font-family: "ssp-600";
+  src: url(../../static/fonts/SourceSansPro/SourceSansPro-SemiBold.ttf) format("truetype");
+}
+@font-face {
+  font-family: "ssp-600-i";
+  src: url(../../static/fonts/SourceSansPro/SourceSansPro-SemiBoldItalic.ttf) format("truetype");
 }
 html {
-  font-family: "Source Sans Pro" !important;
+  font-family: "ssp-600-i" !important;
 }
 
 nav {
@@ -13,7 +37,7 @@ nav {
   height: 4rem;
 }
 nav a {
-  font-family: "Source Sans Pro" !important;
+  font-family: "ssp-600" !important;
   color: #cccccc !important;
 }
 nav div {

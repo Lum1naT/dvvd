@@ -43,14 +43,14 @@
 $(document).ready( function (){
 
 
-  $("#menuToggle").click( function(){
-  if($(this).hasClass("fa-bars")){
-    $(this).addClass("fa-times")
-    $(this).removeClass("fa-bars")
+  $(".navbar-toggler").click( function(){
+  if($(this).children("#menuToggle").hasClass("fa-bars")){
+    $(this).children("#menuToggle").addClass("fa-times")
+    $(this).children("#menuToggle").removeClass("fa-bars")
 
   } else {
-    $(this).addClass("fa-bars")
-    $(this).removeClass("fa-times")
+    $(this).children("#menuToggle").addClass("fa-bars")
+    $(this).children("#menuToggle").removeClass("fa-times")
 
   }
   });

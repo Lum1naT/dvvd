@@ -2,16 +2,10 @@
 @import '/node_modules/font-awesome/css/font-awesome.css';
 
 @import './variables.scss';
-@import './fonts.sass';
-
-@font-face {
-  font-family: 'Source Sans Pro';
-  src: url(../../static/fonts/SourceSansPro/SourceSansPro-BoldItalic.ttf)
-    'truetype';
-}
+@import './fonts.scss';
 
 html {
-  font-family: 'Source Sans Pro' !important;
+  font-family: 'ssp-600-i' !important;
 }
 
 nav {
@@ -19,7 +13,7 @@ nav {
   height: 4rem;
 
   a {
-    font-family: 'Source Sans Pro' !important;
+    font-family: 'ssp-600' !important;
     color: $secondary-color !important;
   }
 
