@@ -1,10 +1,19 @@
 @import '/node_modules/bootstrap/dist/css/bootstrap.css';
 @import '/node_modules/font-awesome/css/font-awesome.css';
+@font-face {
+  font-family: "Source Sans Pro";
+  src: url(../../static/fonts/SourceSansPro/SourceSansPro-BoldItalic.ttf) "truetype";
+}
+html {
+  font-family: "Source Sans Pro" !important;
+}
+
 nav {
   background-color: #232323;
   height: 4rem;
 }
 nav a {
+  font-family: "Source Sans Pro" !important;
   color: #cccccc !important;
 }
 nav div {
