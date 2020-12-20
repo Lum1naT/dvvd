@@ -40,6 +40,9 @@ nav a {
   font-family: "ssp-600" !important;
   color: #cccccc !important;
 }
+nav .dropdown-item:hover {
+  background-color: #666666 !important;
+}
 nav div {
   background-color: #232323 !important;
 }

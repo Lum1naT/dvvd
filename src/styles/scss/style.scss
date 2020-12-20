@@ -17,6 +17,12 @@ nav {
     color: $secondary-color !important;
   }
 
+  .dropdown-item {
+    &:hover {
+      background-color: #666666 !important;
+    }
+  }
+
   div {
     background-color: $primary-color !important;
   }
