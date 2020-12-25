@@ -4,17 +4,55 @@
 @import './variables.scss';
 @import './fonts.scss';
 
+$base-size: 1;
+
+@keyframes menu-item-hover {
+  0% {
+    width: 0%;
+  }
+
+  100% {
+    width: 100%;
+  }
+}
+
 html {
-  font-family: 'ssp-600-i' !important;
+  font-family: 'ssp-400' !important;
+  font-size: $base-size * 1 em;
 }
 
 nav {
   background-color: $primary-color;
   height: 4rem;
 
+  #menu-hover-underline {
+    height: 3px;
+    width: 0%;
+  }
+
+  #navbarSupportedContent {
+    width: 100% !important;
+  }
+
+  .dropdown-toggle {
+    &:hover > .dropdown-menu {
+      visibility: visible !important;
+      display: block;
+    }
+  }
+
   a {
     font-family: 'ssp-600' !important;
     color: $secondary-color !important;
+
+    &:hover {
+      font-size: $base-size * 1.2 em;
+
+      & > div[id^='menu-hover-underline'] {
+        animation: 0.3s ease-in-out both menu-item-hover;
+        background-color: cadetblue !important;
+      }
+    }
   }
 
   .dropdown-item {
@@ -28,9 +66,39 @@ nav {
   }
 
   div .circle {
-    background-color: red;
-    height: 30px;
-    width: 30px;
+    background-color: $secondary-color !important;
+    height: 35px;
+    width: 35px;
     float: right;
+    border-radius: 100%;
+    text-align: center;
+    margin-left: 5px;
+    margin-right: 5px;
+
+    &:hover {
+      background-color: $primary-color !important;
+    }
+
+    &:hover > i {
+      color: $secondary-color !important;
+    }
+
+    i {
+      color: $primary-color !important;
+      vertical-align: middle;
+      width: 100%;
+    }
+  }
+
+  div .social-icons {
+    vertical-align: middle;
+  }
+
+  ul .navbar-nav {
+    height: 100em;
+
+    li {
+      height: 100em;
+    }
   }
 }

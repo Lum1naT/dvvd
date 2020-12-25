@@ -28,17 +28,44 @@
   font-family: "ssp-600-i";
   src: url(../../static/fonts/SourceSansPro/SourceSansPro-SemiBoldItalic.ttf) format("truetype");
 }
+@keyframes menu-item-hover {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 100%;
+  }
+}
 html {
-  font-family: "ssp-600-i" !important;
+  font-family: "ssp-400" !important;
+  font-size: 1 em;
 }
 
 nav {
   background-color: #232323;
   height: 4rem;
 }
+nav #menu-hover-underline {
+  height: 3px;
+  width: 0%;
+}
+nav #navbarSupportedContent {
+  width: 100% !important;
+}
+nav .dropdown-toggle:hover > .dropdown-menu {
+  visibility: visible !important;
+  display: block;
+}
 nav a {
   font-family: "ssp-600" !important;
   color: #cccccc !important;
+}
+nav a:hover {
+  font-size: 1.2 em;
+}
+nav a:hover > div[id^=menu-hover-underline] {
+  animation: 0.3s ease-in-out both menu-item-hover;
+  background-color: cadetblue !important;
 }
 nav .dropdown-item:hover {
   background-color: #666666 !important;
@@ -47,10 +74,34 @@ nav div {
   background-color: #232323 !important;
 }
 nav div .circle {
-  background-color: red;
-  height: 30px;
-  width: 30px;
+  background-color: #cccccc !important;
+  height: 35px;
+  width: 35px;
   float: right;
+  border-radius: 100%;
+  text-align: center;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+nav div .circle:hover {
+  background-color: #232323 !important;
+}
+nav div .circle:hover > i {
+  color: #cccccc !important;
+}
+nav div .circle i {
+  color: #232323 !important;
+  vertical-align: middle;
+  width: 100%;
+}
+nav div .social-icons {
+  vertical-align: middle;
+}
+nav ul .navbar-nav {
+  height: 100em;
+}
+nav ul .navbar-nav li {
+  height: 100em;
 }
 
 /*# sourceMappingURL=style.css.map */

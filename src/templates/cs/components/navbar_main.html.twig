@@ -1,4 +1,5 @@
 
+<script src="https://kit.fontawesome.com/ee02f82faf.js" crossorigin="anonymous"></script>
 
 
 <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
@@ -14,8 +15,30 @@
       </li>
 
        <li class="nav-item">
-        <a class="nav-link" href="/cs">Projekty <small>a reference</small> <span class="sr-only">(current)</span></a>
+
+        <a class="nav-link" href="/cs">Projekty <small>a reference</small> <span class="sr-only">(current)</span>
+                                <div id="menu-hover-underline"></div>
+
+        </a>
       </li>
+
+             <li class="nav-item">
+
+        <a class="nav-link" href="/cs">Projekty <small>a reference</small> <span class="sr-only">(current)</span>
+                                <div id="menu-hover-underline"></div>
+
+        </a>
+      </li>
+
+             <li class="nav-item">
+
+        <a class="nav-link" href="/cs">Projekty <small>a reference</small> <span class="sr-only">(current)</span>
+                                <div id="menu-hover-underline"></div>
+
+        </a>
+      </li>
+
+
       <li class="nav-item">
 
 
@@ -31,10 +54,15 @@
         </div>
       </li>
 
-      <div class="social-icons">
-        <a href="#"><div class="circle"></div></a>
+
+        <div class="social-icons">
+        <a href="#"><div class="circle"><i class="fab fa-facebook-f fa-sm"></i></div></a>
+        <a href="#"><div class="circle"><i class="fas fa-envelope"></i></div></a>
+        <a href="#"><div class="circle"><i class="fab fa-facebook-f fa-sm"></i></div></a>
       </div>
+
   </div>
+
 </nav>
 
 
@@ -55,6 +83,37 @@ $(document).ready( function (){
   }
   });
 
+});
+
+const $dropdown = $(".dropdown");
+const $dropdownToggle = $(".dropdown-toggle");
+const $dropdownMenu = $(".dropdown-menu");
+const showClass = "show";
+ 
+
+ 
+$(window).on("load resize", function() {
+  if (this.matchMedia("(min-width: 768px)").matches) {
+    $dropdown.hover(
+      function() {
+        const $this = $(this);
+        $this.addClass(showClass);
+        $this.find($dropdownToggle).attr("aria-expanded", "true");
+        $this.find($dropdownMenu).addClass(showClass);
+      },
+      function() {
+        const $this = $(this);
+        $this.removeClass(showClass);
+        $this.find($dropdownToggle).attr("aria-expanded", "false");
+          setTimeout(function(){
+            $this.find($dropdownMenu).removeClass(showClass);
+          }, 400);
+      
+      }
+    );
+  } else {
+    $dropdown.off("mouseenter mouseleave");
+  }
 });
 
 </script>
