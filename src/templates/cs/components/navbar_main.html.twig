@@ -94,7 +94,7 @@ const showClass = "show";
  
 $(window).on("load resize", function() {
   if (this.matchMedia("(min-width: 768px)").matches) {
-    $dropdown.hover(
+$dropdown.hover(
       function() {
         const $this = $(this);
         $this.addClass(showClass);
@@ -102,15 +102,22 @@ $(window).on("load resize", function() {
         $this.find($dropdownMenu).addClass(showClass);
       },
       function() {
-        const $this = $(this);
+
+        setTimeout(function(){
+          var isHovered = $('.dropdown').is(":hover"); // returns true or false
+            if(!isHovered){
+                const $this = $(".dropdown");
         $this.removeClass(showClass);
         $this.find($dropdownToggle).attr("aria-expanded", "false");
-          setTimeout(function(){
             $this.find($dropdownMenu).removeClass(showClass);
-          }, 400);
+            }
+                  
       
+        }, 200);
+
       }
     );
+
   } else {
     $dropdown.off("mouseenter mouseleave");
   }
