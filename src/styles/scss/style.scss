@@ -34,13 +34,6 @@ nav {
     width: 100% !important;
   }
 
-  .dropdown-toggle {
-    &:hover > .dropdown-menu {
-      visibility: visible !important;
-      display: block;
-    }
-  }
-
   a {
     font-family: 'ssp-600' !important;
     color: $secondary-color !important;
@@ -49,7 +42,7 @@ nav {
       font-size: $base-size * 1.2 em;
 
       & > div[id^='menu-hover-underline'] {
-        animation: 0.3s ease-in-out both menu-item-hover;
+        animation: 0.2s ease-in-out both menu-item-hover;
         background-color: cadetblue !important;
       }
     }
@@ -85,20 +78,23 @@ nav {
 
     i {
       color: $primary-color !important;
-      vertical-align: middle;
-      width: 100%;
+      text-align: center !important;
+      vertical-align: bottom !important;
+
+      width: 100% !important;
     }
   }
 
   div .social-icons {
-    vertical-align: middle;
+    vertical-align: middle !important;
+    float: right !important;
+    display: inline-block !important;
+    text-align: center;
   }
 
   ul .navbar-nav {
-    height: 100em;
-
-    li {
-      height: 100em;
-    }
+    width: 100% !important;
+    margin: 0 auto;
+    display: inline !important;
   }
 }

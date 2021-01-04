@@ -52,10 +52,6 @@ nav #menu-hover-underline {
 nav #navbarSupportedContent {
   width: 100% !important;
 }
-nav .dropdown-toggle:hover > .dropdown-menu {
-  visibility: visible !important;
-  display: block;
-}
 nav a {
   font-family: "ssp-600" !important;
   color: #cccccc !important;
@@ -64,7 +60,7 @@ nav a:hover {
   font-size: 1.2 em;
 }
 nav a:hover > div[id^=menu-hover-underline] {
-  animation: 0.3s ease-in-out both menu-item-hover;
+  animation: 0.2s ease-in-out both menu-item-hover;
   background-color: cadetblue !important;
 }
 nav .dropdown-item:hover {
@@ -91,17 +87,20 @@ nav div .circle:hover > i {
 }
 nav div .circle i {
   color: #232323 !important;
-  vertical-align: middle;
-  width: 100%;
+  text-align: center !important;
+  vertical-align: bottom !important;
+  width: 100% !important;
 }
 nav div .social-icons {
-  vertical-align: middle;
+  vertical-align: middle !important;
+  float: right !important;
+  display: inline-block !important;
+  text-align: center;
 }
 nav ul .navbar-nav {
-  height: 100em;
-}
-nav ul .navbar-nav li {
-  height: 100em;
+  width: 100% !important;
+  margin: 0 auto;
+  display: inline !important;
 }
 
 /*# sourceMappingURL=style.css.map */
